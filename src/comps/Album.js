@@ -27,7 +27,6 @@ const Album = () => {
 
     return (
         <h1>Album</h1>
-        links
     )
 }
 export default Album;
