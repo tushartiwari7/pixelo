@@ -8,6 +8,7 @@ import AddPhotoAlternateIcon from "@material-ui/icons/AddPhotoAlternate";
 import { makeStyles } from '@material-ui/core/styles';
 import red from "@material-ui/core/colors/red";
 import blue from "@material-ui/core/colors/blue";
+import ShowProgress from "./ShowProgress"
 const useStylesforAppbar = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
@@ -46,15 +47,15 @@ function ImageUpload() {
     const classes = useStylesforAppbar();
 
   const handleUploadClick = (e) => {
-    console.log(e.target.files[0]);
     let selected = e.target.files[0];
+    console.log(selected);
     if(selected) {
       setFile(selected);
       setError(null);
     }
     else {
       setError("Please upload an image file. ");
-      setFile(null);
+      setFile(null); 
     }
 
     // ((e.target.files[0])!=undefined)? setFile(e.target.files[0]) : console.log("pleae")
@@ -80,7 +81,8 @@ function ImageUpload() {
             </label>
           </Grid>
         <div className="message">
-          {file?file.name:error}
+          {file?(file.name):error}
+          {file && <ShowProgress file={file} setFile={setFile} />}
         </div>
         </CardContent>
       </React.Fragment>

@@ -1,6 +1,7 @@
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import 'firebase/storage';
 import 'firebase/firestore';
+// import 'firebase/analytics';
   var firebaseConfig = {
     apiKey: "AIzaSyAOnlvAQXwkVP6kq42uPFTi-5UdNEsw_YQ",
     authDomain: "okaybuddy.firebaseapp.com",
@@ -11,7 +12,7 @@ import 'firebase/firestore';
     measurementId: "G-YRWT8RNW3G"
   };
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+  // firebase.analytics();
 
   const backend = firebase.storage();
   const firestore = firebase.firestore();
