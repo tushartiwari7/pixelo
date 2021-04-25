@@ -8,7 +8,8 @@ const useDb = () => {
                     let documents = item.docs.map(doc => ({
                         link: doc.data().url,
                         creationTime: new Date((doc.data().createdAt.seconds)*1000),
-                        id: doc.id
+                        id: doc.id,
+                        name: doc.data().name,
                     })
                     );
                     setDetails(documents);
@@ -27,13 +28,13 @@ const Album = () => {
         return (docs.map((instance)=> {
 
             return (
-                <img src={instance.link} alt=""></img>
+                <img src={instance.link} alt={instance.name}></img>
             )
         }))
     }
     else {
         return (
-            <h1>Empty Album </h1>
+            <h1>Loading Album... </h1>
         )
     }
 }
