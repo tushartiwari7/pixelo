@@ -1,5 +1,9 @@
 import {firestore} from '../Firebase/config';
 import React,{useState,useEffect} from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+// import tileData from './tileData';
 
 const useDb = () => {
     const [details,setDetails] = useState([]);
@@ -19,18 +23,39 @@ const useDb = () => {
     ,[])
     return {details};
 }
-
+const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+      overflow: 'hidden',
+      backgroundColor: theme.palette.background.paper,
+    },
+    gridList: {
+      width: "80vw",
+      
+    },
+  }));
+  
 const Album = () => {
     const docs = useDb().details;
-    // const [returnedValue,setReturnedValue] = useState(null);
+    const classes = useStyles();
+
     if(docs.length) {
         console.log(docs,typeof(docs));
-        return (docs.map((instance)=> {
+        return (
+            
+            <div className={classes.root}>
+            <GridList cellHeight={160} className={classes.gridList} cols={3} >
 
-            return (
-                <img src={instance.link} alt={instance.name}></img>
-            )
-        }))
+            {docs.map(instance => 
+            <GridListTile key={instance.name} cols={1}>
+                <img src={instance.link} alt={instance.name} />
+            </GridListTile>
+            )}
+            </GridList>
+            </div>
+        )
     }
     else {
         return (
