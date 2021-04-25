@@ -2,21 +2,22 @@
 
 :root{
   --primary: #efb6b2;
-  --secondary: #4e4e4e;
+  --secondary: #1f1b24;
   --error: #ff4a4a;
 }
 
 /* base styles & title */
 body{
   font-family: "Noto Serif";
-  color: var(--secondary);
+  color: var(--primary);
+  background-color: var(--secondary);
 }
 .App{
   max-width: 960px;
   margin: 0 auto;
 }
 .title h1{
-  color: var(--primary);
+  color: var(--error);
   font-size: 1.2rem;
   letter-spacing: 2px;
   font-weight: normal;
@@ -33,13 +34,11 @@ body{
   background: var(--primary);
   margin-top: 30px;
 }
-/* upload form styles */
-
-
-/* progress bar styles */
-
-
-/* image grid styles */
-
-
-/* modal styles */
+.modal {
+  display: block;
+  max-width: 60%;
+  max-height: 80%;
+  margin: 30px auto;
+  box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
+  border: 3px solid white;
+}

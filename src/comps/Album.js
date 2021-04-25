@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
       flexWrap: 'wrap',
       justifyContent: 'space-around',
       overflow: 'hidden',
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: "--secondary",
     },
     gridList: {
       width: "80vw",
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
   
-const Album = () => {
+const Album = ({setSelectedImage}) => {
     const docs = useDb().details;
     const classes = useStyles();
 
@@ -49,7 +49,7 @@ const Album = () => {
             <GridList cellHeight={160} className={classes.gridList} cols={3} >
 
             {docs.map(instance => 
-            <GridListTile key={instance.name} cols={1}>
+            <GridListTile key={instance.name} onClick={()=> setSelectedImage(instance)} cols={1}>
                 <img src={instance.link} alt={instance.name} />
             </GridListTile>
             )}
