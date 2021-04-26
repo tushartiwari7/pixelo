@@ -48,7 +48,7 @@ const Album = ({setSelectedImage}) => {
 
             {docs.map(instance => 
             <GridListTile key={instance.name} onClick={()=> setSelectedImage(instance)} cols={1}>
-                <img src={instance.link} alt={instance.name} />
+                <img className="pointer" src={instance.link} alt={instance.name} />
             </GridListTile>
             )}
             </GridList>
