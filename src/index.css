@@ -29,11 +29,7 @@ body{
   margin-top: 60px;
   font-size: 2.6rem;
 }
-.progressBar {
-  height: 10px;
-  background: var(--primary);
-  margin-top: 30px;
-}
+.pointer {cursor: pointer;}
 .modal {
   display: block;
   max-width: 60%;
@@ -41,4 +37,5 @@ body{
   margin: 30px auto;
   box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
   border: 3px solid white;
+  cursor: not-allowed;
 }
