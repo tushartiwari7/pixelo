@@ -1,8 +1,16 @@
 import useStorage from '../hooks/useStorage';
 import React,{ useEffect } from 'react';
 import {firestore} from '../Firebase/config';
+import { makeStyles } from '@material-ui/core/styles';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
+const useStyles = makeStyles({
+  root: {
+    width: '100%',
+  },
+});
 const ProgressBar = ({file,setFile}) => {
+    const classes = useStyles();
     const fileName=file.name;
     const {progress,result} = useStorage(file);
     // console.log(progress,result,error,file);
@@ -18,7 +26,9 @@ const ProgressBar = ({file,setFile}) => {
     },[result, setFile,fileName])
 
     return (
-        <h2 className="progressBar" style={{width: progress + "%"}}>Uploading...</h2>
+        <div className={classes.root}>
+            <LinearProgress variant="determinate" value={progress} />
+        </div>
     )
 }
 
