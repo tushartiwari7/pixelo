@@ -25,7 +25,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function FullScreenDialog({selectedImage}) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  console.log(selectedImage);
 
   const handleClickOpen = () => {
     setOpen(true);

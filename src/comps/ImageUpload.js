@@ -1,5 +1,4 @@
-// imports the React Javascript Library
-//Card
+
 import React,{ useState } from "react";
 import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
@@ -48,7 +47,6 @@ function ImageUpload() {
 
   const handleUploadClick = (e) => {
     let selected = e.target.files[0];
-    console.log(selected);
     if(selected) {
       setFile(selected);
       setError(null);
@@ -57,8 +55,6 @@ function ImageUpload() {
       setError("Please upload an image file. ");
       setFile(null); 
     }
-
-    // ((e.target.files[0])!=undefined)? setFile(e.target.files[0]) : console.log("pleae")
   }
 
 

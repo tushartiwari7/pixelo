@@ -3,7 +3,6 @@ import React,{useState,useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
-// import tileData from './tileData';
 
 const useDb = () => {
     const [details,setDetails] = useState([]);
@@ -42,7 +41,6 @@ const Album = ({setSelectedImage}) => {
     const classes = useStyles();
 
     if(docs.length) {
-        console.log(docs,typeof(docs));
         return (
             
             <div className={classes.root}>
@@ -59,7 +57,7 @@ const Album = ({setSelectedImage}) => {
     }
     else {
         return (
-            <h1>Loading Album... </h1>
+            <h1 >Loading Album... </h1>
         )
     }
 }
