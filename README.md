@@ -1,3 +1,15 @@
+# Pixelo: 
+ Capture Precious Moments.
+ 
+ Get the [Live Demo](https://pixelo.vercel.app) of the working project and share something with us. ;)
+ 
+### Sneak-peak
+![Pixelo project overview](https://user-images.githubusercontent.com/66322728/116076577-0993c200-a6b2-11eb-8a4c-dbfeeb1c5d36.png)
+
+
+
+# Installation
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
