@@ -13,7 +13,6 @@ const ProgressBar = ({file,setFile}) => {
     const classes = useStyles();
     const fileName=file.name;
     const {progress,result} = useStorage(file);
-    // console.log(progress,result,error,file);
     useEffect(() => {
         if(result) {
             setFile(null);
